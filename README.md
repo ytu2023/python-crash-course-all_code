@@ -15,14 +15,17 @@ Chapter 11: Testing your code
 
 Author's solutions for checking and code optimisation: https://ehmatthes.github.io/pcc_2e/solutions/solutions/
 
-## 我学习整理的 
+## 我自己学习添加的内容
 这些代码主要包含Python入门到实践（第2版）书中的源代码和练习题的参考代码。
 主要是基于
 - `https://github.com/Chengyu-Zhu/Python-`
 对上述的Git库中添加了关于练习题的参考答案
 
 - `https://github.com/barcern/python-crash-course`
-上述库的代码主要是课后作业
+上述库的代码主要是课后作业。
+
+- `https://github.com/OctopusLian/Python-Crash-Course-Homework`
+下面的目录和项目代码来自于上面这个库[点击跳转](https://github.com/OctopusLian/Python-Crash-Course-Homework)
 
 ## 《Python编程从入门到实践》课后练习  
 
