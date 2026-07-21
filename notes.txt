@@ -1,0 +1,289 @@
+Python Crash Course Notes
+
+Naming convention:
+- variables: lowercase, must begin with underscore or letter, labels assigned to values
+- constants: all caps
+
+Variable types:
+- string: series of characters inside quotation marks ("" or '' where choice based on whether ' or " used within string)
+	- f-string: use f"{}" to insert variable into string, can type in strings and use methods, previously format() method
+- integer: use _ to improve readability
+- float: given in any operation involving a float or division, use _ to improve 
+
+Lists: 
+- collection of items in a particular order
+- example_list = [x, y]
+- index: starts at 0, -1 is last, example_list[0].title() to access item and change capitalisation
+- slicing: use list[index1:index2:step] to get a portion of the list, use list[:] to copy full list (lists not separate if simply equated!)
+
+Tuples:
+- immutable lists
+- example_tuple = (x, y) and defined by commas so must always include a comma (even if one element only)
+- use standard index notation []
+
+Dictionaries:
+- collections of key-value pairs where any object in python can be a value
+- example_dictionary = {'att1': 'value1', 'att2':, 'value2'}
+- to access a value: dictionary[key]
+- to add or modify a key-value pair: dictionary[key] = value
+- order of key-value pairs retained
+- when used with user input: dictionary[key] = [value]
+
+Nesting:
+- storing dictionaries in a list, or storing a list in a dictionary, or storing a dictionary in a dictionary
+- avoid nesting too deeply
+
+Sets:
+- collection of items in which each item is unique
+- example_set = {'a', 'b', 'c'}
+- example_set = set(list)
+- items not retained in a specific order
+- if repeat placed into a set, repeat is ignored and removed
+
+Methods:
+- actions python performs on a piece of data
+- variable.method()
+- .title(), .lower(), .upper() to change case
+- .rstrip(), .lstrip(), .strip() to remove whitespace around string
+- .append(value), .insert(index, value), .pop(index), .remove(value) to edit lists where remove(value) only removes first occurence
+- .sort(reverse=), .reverse() to permanently organise lists
+- .get(key, optional value) to get dictionary values if key may not exist
+- .items(), .keys(), .values() to return list of key-value pairs, keys and values in a dictionary, used with loops where .keys() is default
+- .isnumeric() to check if all characters in a string are numeric
+- .read() to read a file, returns an empty string at end of file (not in spyder?)
+- .readlines() to read individual lines in a file, produces a list
+- .replace(original, new) to replace part of a string with a new value temporarily
+- .split() to separate a string into parts by spaces
+- .count('sub-string') to count how many times a sub-string appears in a string
+- json.dump(values, filename) to write data into JSON file
+- json.load(filename) to load data into python
+
+Functions:
+- blocks of code designed to do one specific job
+- def function(input): called function definition
+- to call a function, type write its name with necessary input
+- code with functions easier to maintain and extend
+- parameter: piece of information the function requires, defined as a variable
+	- can set a default value in function definition with mandatory parameters first
+	- use parameter='' or parameter=None or parameter=0 to indicate optional parameter
+	- use *parameter for args to be stored in an empty tuple, allowing for an arbitrary number of args, must be defined last
+	- use **parameter to create a dictionary and store all key-value arguments in it
+- argument: piece of information passed to the function call, specific data value
+	 - positional: order in function definition matched to order in function call, order matters
+	 - keyword: name-value pair passed to a function, order irrelevant
+	 - arbitrary: not pre-defined, pass as a tuple using *parameter (*args) or key-value pairs as **parameter (**kwargs)
+	 - lists and dictionaries, feed in list[:] to use a copy of list, more efficient to use original list
+- return value: value returned by function, use return statement, can return any data entity
+- use modules to store functions in a separate file, use import statements
+	- should be defined at the start of the file, can use alias to shorter function name
+	- to import an entire module: import module_name or import module_name as mn
+		- call functions using module_name.function_name() if not imported specific functions
+	- to import all or specific functions from a module: 
+		- from module_name import * (this can lead to module functions overwriting existing functions - not recommended)
+		- from module_name import function_0, function_1 or from module_name import function_name as fn
+		- call functions using function_name()
+- commonly used inbuilt functions:
+	- del(obj_name) to delete an object (incl. dictionary key-value pairs, list items)
+	- sorted(list, reverse=) to temporarily sort lists alphabetically or numerically
+	- range(first value, final value+1, step) in for loops, stops at final value so never prints it, range(6) gives 0-5
+	- list() to create lists, e.g. list(range(5))
+	- min(list) to give smallest value
+	- max(list) to give largest value
+	- sum(list) to give sum of all values
+	- set(list) to give a unique collection of values in list
+	- input(prompt) to obtain user input in string format
+	- int(string) to convert a string to numerical format
+	- float(string) to convert a string to a float
+	- break to exit any loop immediately
+	- continue to skip rest of while loop and go back to the start
+	- return to return a value in a function, provide a variable to assign return value to
+	- __init__(self, par1, par2), to initialise parameters in classes
+	- super() to call parent class method from child class, used as super().__init__(parent_attr1, parent_attr2)
+	- open(file_name) to access a file
+	- with open(file_name) to access a file and automatically close it when no longer needed
+	- close(file_name) to close a file, may be risky if file not properly closed
+	- write() to write a string into a file, doesn't add newlines, to be used with 'w', 'a' and 'r+'
+	- str() to convert a non-string to a string
+	- pass to fail silently in try-except block
+
+Formatting:
+- \t for tab
+- \n for new line
+- """x""" for documenting code, called doctring
+
+Conditional tests (Boolean expressions):
+- = for assigning
+- == for checking equality (equality operator)
+- != for checking inequality
+- <, <=, >, >= for mathematical comparisons
+- in for checking whether value in a list
+- not in for checking whether value not in a list
+- non-empty string evaluates as True
+- None evaluates as False
+
+Other:
+- multiple assignment: e.g. x, y, z = 0, 0, 0
+- modulo operator: returns remainder, e.g. 4 % 3 returns 1
+- += operator is equivalent to x = x + a
+- refactoring = breaking up code into functions / classes with specific jobs
+- use an empty return statement to leave function as soon as return is reached
+
+Loops:
+- for loop: use : and indentation
+	- dictionaries: for key, value, in sorted/set(dictionary.items()/keys()/values()):
+	- shouldn't use for loops to midfy lists and dictionaries, use while loops instead
+- list comprehension allows to create lists in one line, [expression for loop] e.g. squares = [value**2 for value in range(1,11)]
+- if loop: use : and indentation
+	- uses conditional tests (True or False)
+	- case sensitive, use item.lower() == 'x' for testing
+	- and / or for checking for multiple conditions
+	- if, elif, else, run multiple if statements if each test needs to be evaluated / acted on
+	- if list: checks if list is empty or if not list: checks if list is not empty
+- while loop: use : and indentation
+	- runs while a condition is True
+	- flag: set to True when multiple conditions are all live, so while loop only checks if flag is True (not each condition)
+	- break statement: exits while loop immediately, used with while True: loops
+	- continue statement: skips rest of loop and goes back to the start
+	- ctrl+C to exit infinite loop
+	- use while list: to loop through all items in a list
+	- use while 'item' in list: to loop through list until 
+
+Object-oriented programming:
+- effective approach where classes define general behaviour for a category of objects, objects based on classes with additional unique traits
+- instantiation = making a specific object from a class, then using instance of a class to perform actions
+- creating a class:
+	- class Class_name:
+		- definition with capitalisation for class name, e.g. class Dog:
+	- a function that is part of a class is called a method
+	- def __init__(self, par1, par2):
+		- must use two trailing underscores on each side to ensure python calls it when class used
+		- must include self as first parameter
+			- reference to instance itself
+			- gives instance access to attributes and methods in class
+		- when creating an instance, don't need to pass self but need to pass par1 and par2
+		- self.par1 = par1
+			- makes the variable available to every method in class and to all instances
+			- associates parameter par1 with variable par1 and attaches it to instance created
+			- variables accessible through instances like this are called attributes
+		- self.attribute = value
+			- can initialise non-input attributes in __init__()
+	- def function1(self, par3):
+		- other methods must include self, and may include other parameters
+		- available to instances
+- creating an instance:
+	- my_instance = Class_name(par1, par2) which calls __init__ method in the class itself > creates instance > assigns attributes
+	- my_instance.par1 to access attributes
+	- my_instance.method() to call a method from the related class
+	- can create multiple instances which must have unique name or unique spot in list/dictionary
+- modifying attributes:
+	- modify directly: instance.attribute = new_value
+	- modify through a method: write a method in class to update specific attribute, parameter does not need to be in __init__(), self.attr = new_value
+	- incrementing through a method: write a method in class to increment specific attribute, parameter does not need to be in __init__(), self.attr += increment
+- inheritance:
+	- child class inherits any/all attributes and methods of parent class + can define new methods and attributes
+	- parent class must be in same file and appear before child class
+	- to override a method from parent class, use same name in child class and redefine functionality
+	- also called superclass and subclass
+	- class ChildClass(ParentClass):
+		def __init__(self, parent_attr1, parent_attr2):
+			super().__init__(parent_attr1, parent_attr2)
+			self.attr3 = Other_Class()
+	- super() function allows to call parent class method from child class
+	- can create an instance and use it as an attribute in __init__(), then refer to the attribute as instance.attribute.other_class_method()
+- use modules to store classes in a separate file, use import statements
+	- should be defined at the start of the file, can use alias to shorter class name
+	- to import an entire module: import module_name or import module_name as mn
+		- call classes using module_name.Class_Name(parameters)
+		- avoids name clashes
+	- to import all or specific classes from a module: 
+		- from module_name import * (this can lead to module functions overwriting existing functions - not recommended)
+		- from module_name import Class_0, Class_1 or from module_name import Class_Name as CN
+		- call functions using function_name()
+	- may need to import a module into a module
+	
+Python standard library:
+	- set of modules included with python installation
+	- import and use
+
+Files:
+	- with open('/users/.../file_name.txt', mode) as file_object:
+		contents = file_object.read()
+		OR
+		file_object.write("string")
+		- modes: 'r' to read (default), 'w' to write, 'a' to append, 'r+' to read and write
+		- with indicates to close file when no longer needed
+		- file_object is an alias
+		- use write() with both 'w', 'a' and 'r+'
+	- absolute or relative file paths, use / or \\ to account for strings
+	- for line in file_object:
+		- to handle file line by line
+	- interprets all text in file as string -> convert using int() or float()
+	- to write non-string data into a file, must convert to string first usng str()
+	- if writing to an existing file which, existing data will be erased first
+	
+Storing data:
+	- use JSON (JavaScript Object Notation) for storing and sharing data, used by many languages
+	- json.dump(values, filename) to write data into JSON file
+	- json.load(filename) to load data into python
+
+Exceptions:
+	- exceptions thrown when error occurs
+	- exception handled > code keeps running, exception not handled > traceback shown
+	- try-except blocks
+		try:
+			code which may cause an error
+		except error_name:
+			pass or print(error_message)
+		else:
+			code dependent on try block succeeding
+	- tracebacks: confuse non-technical users, can be used by malicious users
+	- commonly used for external errors (user input, files, network availability etc.)
+
+Types of errors:
+- indentation
+- logical
+- syntax
+- type e.g. when trying to change value in a tuple, or compare a string to an integer, call a function with wrong number of arguments
+- key
+- ZeroDivisionError
+- FileNotFoundError
+- ValueError
+- UnicodeDecodeError
+
+Styling
+- functions:
+	- def function_name(par0, par1='default value')
+	- function_name(val0, par1='value')
+	- def function_name(
+			par0, par1, par2,
+			par3, par4, par5):
+		function body...
+- classes:
+	- class names in CamelCase, instances and modules lowercase and with underscores
+	- include docstrings
+	- import statements for standard libraries first, separate own by blank line
+	
+Testing
+- module unittest
+- unit test = verifies that one specific aspect of a function's behaviour is correct
+- test case = collection of unit tests
+- steps:
+	- import unittest and function to be tested
+	- create a class to contain tests, must inherit from unittest.TestCase
+	- create test methods within class, must be called test_descriptive_name
+	- e.g. use self.assertEqual(variable, expected_result) to test
+	- to execute testing
+	if __name__ == '__main__':
+		unittest.main()
+- . for pass, E for error, F for failed assertion
+- commonly used assert methods in unittest
+	- assertEqual(a, b) > verify a == b
+	- assertNotEqual(a, b) > verify a != b
+	- assertTrue(x) > verify x is True
+	- assertFalse(x) > verify x is False
+	- assertIn(item, list) > verify item is in list
+	- assertNotIn(item, list) > verify item is not in list
+- setUp() method
+	- create objects once and use them in each test method in a test case
+	- ran before any test_ methods
+	- use self. prefix

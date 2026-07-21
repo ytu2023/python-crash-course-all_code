@@ -1,0 +1,3 @@
+In python you can create dictionaries.
+In python you can ask for user input.
+In python you can check if your birthday is contained in the first one million digits of pi.

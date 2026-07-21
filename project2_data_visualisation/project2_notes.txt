@@ -1,0 +1,14 @@
+Packages
+- matplotlib - simple graphs
+	- pyplot
+		- fig, ax = plt.subplots() to generate one or more plots in same figure where
+		fig is the full figure and ax is one plot
+		- plot() to generate plot, assumes starting point at x=0
+		- plt.show() to display the plot
+		- plt.savefig('name.png') to save the plot automatically
+		- .scatter() to generate a scatter plot, can include c variable for colours and s variable for size
+		- ...c=y_values, cmap=plt.cm.Blues,... as colormaps to set the colours to be a gradient, must be linked e.g. to y values
+- plotly - interactive visualisation which resize to fit display devices
+
+Random walks
+- path determined by random decisions
