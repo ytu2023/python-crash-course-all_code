@@ -12,7 +12,6 @@ information.
 that the restaurant is open.
 - Make an instance called restaurant from your class. Print the two attributes
 individually, then call both methods.
-
 """
 
 # Create the Restaurant class
@@ -35,9 +34,17 @@ class Restaurant:
         
 # Create an instance
 restaurant = Restaurant('Don Giovanni', 'Italian')
+my_restaurant = Restaurant('Xiu jiangnan', 'Chinese') #店名和菜系类型
 
 # Print attributes individually and call both methods
 print(restaurant.restaurant_name)
 print(restaurant.cuisine_type)
 restaurant.describe_restaurant()
 restaurant.open_restaurant()
+
+#打印第2个实例的内容
+print("\n")
+print(my_restaurant.restaurant_name)
+print(my_restaurant.cuisine_type)
+my_restaurant.describe_restaurant()
+my_restaurant.open_restaurant()

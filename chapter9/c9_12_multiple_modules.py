@@ -17,6 +17,7 @@ from c9_12_multiple_modules_module_admin import Admin
 # Create an instance and call methods
 my_admin = Admin('barbora', 'c', 'barcern', 24, 'reading')
 my_admin.describe_user()
+
 my_admin.privileges_instance.show_privileges()
 my_admin.privileges_instance.privileges = ['delete users', 'delete comments']
 my_admin.privileges_instance.show_privileges()

@@ -31,8 +31,11 @@ class Die:
         result = randint(1, self.sides)
         print(f"You have rolled {result}.")
         
+
 # Make an instance of a 6-sided die and roll it 10 times
+
 die6 = Die()
+#print("Make an instance of a 6-sided die and roll it 10 times")
 print(f"\nRolling a die with {die6.sides} sides:")
 for i in range(1,11):
     print(f"\nRoll number {i}:")
@@ -40,13 +43,15 @@ for i in range(1,11):
     
 # Make an instance of a 10-sided die and roll it 10 times
 die10 = Die(10)
+#print("Make an instance of a 10-sided die and roll it 10 times")
 print(f"\nRolling a die with {die10.sides} sides:")
 for i in range(1,11):
     print(f"\nRoll number {i}:")
     die10.roll_die()
     
-# Make an instance of a 6-sided die and roll it 10 times
+# Make an instance of a 20-sided die and roll it 10 times
 die20 = Die(20)
+#print("Make an instance of a 20-sided die and roll it 10 times")
 print(f"\nRolling a die with {die20.sides} sides:")
 for i in range(1,11):
     print(f"\nRoll number {i}:")

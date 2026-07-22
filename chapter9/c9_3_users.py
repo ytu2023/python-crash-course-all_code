@@ -29,7 +29,7 @@ class User:
     def describe_user(self):
         """Method to print a summary about the user."""
         message = f"This user's full name is {self.first_name.title()} "
-        message += f"{self.last_name.title()}. {self.first_name.title()} is "
+        message += f"{self.last_name.title()}.\n{self.first_name.title()} is "
         message += f"{self.age} years old, lives in "
         message += f"{self.location.title()} and uses {self.username} "
         message += f"as username."
@@ -48,9 +48,12 @@ john = User('john', 's', 'john_s', 22, 'madison')
 
 josh.describe_user()
 josh.greet_user()
+
 valentina.describe_user()
 valentina.greet_user()
+
 becky.describe_user()
 becky.greet_user()
+
 john.describe_user()
 john.greet_user()
